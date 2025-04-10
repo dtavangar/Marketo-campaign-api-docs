@@ -29,7 +29,7 @@ This can be done using the REST API and My Tokens.
 
 ## Step 2: Define the Email Content
 
-Create or edit an [email asset](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/rest/assets/emails) that references both lead and My Tokens.
+Create or edit an <a href="https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/rest/assets/emails" target="_blank">email asset</a> that references both lead and My Tokens.
 
 Make sure to **insert the tokens directly into the email content**, as shown below:
 
