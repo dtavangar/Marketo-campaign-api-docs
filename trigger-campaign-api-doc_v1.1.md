@@ -51,6 +51,7 @@ Join here: {{my.JoinLink}}
 
 ![Email editor showing token usage](/help/assets/trigger-campaign/02AddtokensToEMail.png
 
+
 ## Step 3: Add Tokens to the Program
 To pass values dynamically via API, the tokens must already exist in Marketo. You’ll need to create them under the **My Tokens** tab of your Program.
 
@@ -60,19 +61,31 @@ To pass values dynamically via API, the tokens must already exist in Marketo. Yo
   - `{{my.JoinLink}}` — Text token
   - `{{my.WebinarImage}}` — Text token (this will be used as the `src` in an `<img>` tag)
 
-
-You can leave the token values blank as the API will populate them.
-
-
 ![My Tokens tab in campaign](/help/assets/trigger-campaign/03MyTokens.png)
 
-## Step 4: Approve and Activate the Campaign
 
-Ensure the Smart Campaign is **approved and active**. Inactive campaigns cannot be triggered by API calls.
+## Step 4: Set Campaign Qualification Rules and Activate Campaign
 
-![Smart Campaign status set to Approved](/help/assets/trigger-campaign/campaign-status-approved.png)
+Configure the **qualification rules** to control how often a lead can run through the Smart Campaign.
+
+Once configured, click **Activate** in the Smart Campaign to activate the Smart Campaign and able to receive API requests.
+
+![Smart Campaign qualification rule](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/smart-campaigns/using-smart-campaigns/media_1391fa7996ec631e24efbaa374bd5a65863eb6d4f.png?width=600&format=png&optimize=medium)
+
+
 
 ## Step 5: Trigger the Campaign via REST API
+
+
+###  Find the Campaign ID
+
+To trigger a Smart Campaign via API, you'll need the **campaign ID**:
+
+1. Find and click on the Smart Campaign you want to trigger.
+2. Look at the URL in your browser. It will look something like this: `https://app-XXX.marketo.com/#/classic/SC*1234*A1ZN38`
+3. The 4 digits after `SC` is your campaign ID, in the above example the Smart Campaign ID is '1234'
+
+
 
 Use the following endpoint:
 
