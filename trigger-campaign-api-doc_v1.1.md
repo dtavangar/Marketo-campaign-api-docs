@@ -1,12 +1,4 @@
 
----
-title: How to Trigger a Smart Campaign in Marketo Using the REST API and Tokens
-description: Learn how to trigger a Marketo Smart Campaign via the REST API.
-products: marketo
-audience: developer, marketer
-level: intermediate
----
-
 # How to Trigger a Smart Campaign in Marketo Using the REST API and Tokens
 
 
