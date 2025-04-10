@@ -20,8 +20,8 @@ This can be done using the REST API and My Tokens.
 
 ## Step 1: Create the Smart Campaign
 
-1. Go to **Marketing Activities**, and under your **Programs** folder, create a new **Smart Campaign** called `Send Webinar Reminder`.
-2. In the **Smart List** tab, add the trigger:
+1. Go to **Marketing Activities**, and under your [**Programs**](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/programs/creating-programs/understanding-programs) folder, create a new [**Smart Campaign**](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/smart-campaigns/understanding-smart-campaigns) called `Send Webinar Reminder`.
+2. In the **Smart List** tab, [add the trigger](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/smart-campaigns/creating-a-smart-campaign/define-smart-list-for-smart-campaign-trigger) that will be used to call the campaign via the API.
    - `Campaign is Requested`
    - Set **Source** to: `Web Service API`
 
@@ -29,7 +29,7 @@ This can be done using the REST API and My Tokens.
 
 ## Step 2: Define the Email Content
 
-Create or edit an email asset that references both lead and My Tokens.
+Create or edit an [email asset](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/rest/assets/emails) that references both lead and My Tokens.
 
 Make sure to **insert the tokens directly into the email content**, as shown below:
 
@@ -93,13 +93,19 @@ Use the following endpoint:
 POST /rest/v1/campaigns/{campaignId}/trigger.json
 ```
 
+Example
+```
+POST /rest/v1/campaigns/1234/trigger.json
+```
+
+
 ### Example Request Body:
 
 ```json
 {
   "input": [
     {
-      "id": 12345,
+      "id": 1002200,
       "type": "Lead"
     }
   ],
@@ -120,19 +126,19 @@ POST /rest/v1/campaigns/{campaignId}/trigger.json
 }
 ```
 
-Replace `12345` with the correct Lead ID from your Marketo instance.
+Replace `1002200` with the correct Lead ID from your Marketo instance.
 
 ## Authorization
 
-All Marketo REST API requests require an OAuth 2.0 Bearer token.
+All Marketo REST API requests require an OAuth 2.0 access token.
 
-To retrieve your access token:
+To retrieve your access token, use the following endpoint:
 
 ```
 GET /identity/oauth/token?grant_type=client_credentials&client_id=XXX&client_secret=YYY
 ```
 
-Include the token in the header of your API requests:
+Once you receive your access token, include it as a **query parameter** in all API requests:
 
 ```
 Authorization: Bearer YOUR_ACCESS_TOKEN
