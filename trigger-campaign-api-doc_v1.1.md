@@ -82,7 +82,7 @@ Once configured, click **Activate** in the Smart Campaign to activate the Smart 
 To trigger a Smart Campaign via API, you'll need the **campaign ID**:
 
 1. Find and click on the Smart Campaign you want to trigger.
-2. Look at the URL in your browser. It will look something like this: `https://app-XXX.marketo.com/#/classic/SC*1234*A1ZN38`
+2. Look at the URL in your browser. It will look something like this: `https://app-XXX.marketo.com/#/classic/SC**1234**A1ZN38`
 3. The 4 digits after `SC` is your campaign ID, in the above example the Smart Campaign ID is '1234'
 
 
