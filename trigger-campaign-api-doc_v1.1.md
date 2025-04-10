@@ -31,7 +31,7 @@ This can be done using the REST API and My Tokens.
 
 Create or edit an email asset that references both lead and My Tokens.
 
-Make sure to **insert the tokens directly into the email content**, like this:
+Make sure to **insert the tokens directly into the email content**, as shown below:
 
 ```html
 Hi {{lead.First Name}},
@@ -47,11 +47,11 @@ Join here: {{my.JoinLink}}
 > <img src="{{my.WebinarImage}}" alt="Webinar banner" />
 > ```
 >
-> Marketo will not render the image unless the token is placed inside a valid image tag.
+> **Important:** Marketo will not render the image unless the token is placed inside a valid image tag. 
 
 ![Email editor showing token usage](/help/assets/trigger-campaign/02AddtokensToEMail.png
 
-## Step 3: Add Tokens to the Program or Campaign
+## Step 3: Add Tokens to the Program
 To pass values dynamically via API, the tokens must already exist in Marketo. You’ll need to create them under the **My Tokens** tab of your Program.
 
 1. Go to the **My Tokens** tab of your parent Program.
@@ -61,11 +61,10 @@ To pass values dynamically via API, the tokens must already exist in Marketo. Yo
   - `{{my.WebinarImage}}` — Text token (this will be used as the `src` in an `<img>` tag)
 
 
-Leave the values blank — they will be injected dynamically at runtime through the API.
+You can leave the token values blank as the API will populate them.
 
-> ✅ **Important:** Defining a token in the campaign does not automatically include it in your email. You must manually insert each token in the email editor as shown above.
 
-![My Tokens tab in campaign](/help/assets/trigger-campaign/tokens-tab.png)
+![My Tokens tab in campaign](/help/assets/trigger-campaign/03MyTokens.png)
 
 ## Step 4: Approve and Activate the Campaign
 
