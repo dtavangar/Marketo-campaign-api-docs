@@ -20,8 +20,12 @@ This can be done using the REST API and My Tokens.
 
 ## Step 1: Create the Smart Campaign
 
-1. Go to **Marketing Activities**, and under your [**Programs**](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/programs/creating-programs/understanding-programs) folder, create a new [**Smart Campaign**](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/smart-campaigns/understanding-smart-campaigns) called `Send Webinar Reminder`.
-2. In the **Smart List** tab, [add the trigger](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/smart-campaigns/creating-a-smart-campaign/define-smart-list-for-smart-campaign-trigger) that will be used to call the campaign via the API.
+1. Go to **Marketing Activities**, and under your 
+<a href="https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/programs/creating-programs/understanding-programs" target="_blank">**Programs**</a> folder, create a new 
+<a href="https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/smart-campaigns/understanding-smart-campaigns" target="_blank">**Smart Campaign**</a> called `Send Webinar Reminder`.
+
+2. In the **Smart List** tab, 
+<a href="https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/smart-campaigns/creating-a-smart-campaign/define-smart-list-for-smart-campaign-trigger" target="_blank">add the trigger</a> that will be used to call the campaign via the API.
    - `Campaign is Requested`
    - Set **Source** to: `Web Service API`
 
