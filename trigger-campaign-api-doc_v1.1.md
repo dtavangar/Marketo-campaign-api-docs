@@ -20,12 +20,12 @@ This can be done using the REST API and My Tokens.
 
 ## Step 1: Create the Smart Campaign
 
-1. Go to **Marketing Activities** and create a new Smart Campaign (e.g., `Send Webinar Reminder`)
+1. Go to **Marketing Activities**, and under your **Programs** folder, create a new **Smart Campaign** called `Send Webinar Reminder`.
 2. In the **Smart List** tab, add the trigger:
    - `Campaign is Requested`
    - Set **Source** to: `Web Service API`
 
-![Smart List trigger setup](/help/assets/trigger-campaign/smart-list-trigger.png)
+![Smart List trigger setup](/help/assets/trigger-campaign/01CampaignIsRequested.png)
 
 ## Step 2: Define the Email Content
 
@@ -49,15 +49,17 @@ Join here: {{my.JoinLink}}
 >
 > Marketo will not render the image unless the token is placed inside a valid image tag.
 
-![Email editor showing token usage](/help/assets/trigger-campaign/email-editor.png)
+![Email editor showing token usage](/help/assets/trigger-campaign/02AddtokensToEMail.png
 
-## Step 3: Add Tokens to the Campaign
+## Step 3: Add Tokens to the Program or Campaign
+To pass values dynamically via API, the tokens must already exist in Marketo. You’ll need to create them under the **My Tokens** tab of your Program.
 
-1. Go to the **My Tokens** tab of the Smart Campaign
-2. Add the necessary **Text Tokens**, such as:
-   - `{{my.WebinarTitle}}`
-   - `{{my.JoinLink}}`
-   - `{{my.WebinarImage}}` (optional image URL)
+1. Go to the **My Tokens** tab of your parent Program.
+2. Drag in a **Text token** from the right-side panel for each dynamic value.
+  - `{{my.WebinarTitle}}` — Text token
+  - `{{my.JoinLink}}` — Text token
+  - `{{my.WebinarImage}}` — Text token (this will be used as the `src` in an `<img>` tag)
+
 
 Leave the values blank — they will be injected dynamically at runtime through the API.
 
