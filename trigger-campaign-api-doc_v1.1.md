@@ -8,11 +8,11 @@ This tutorial walks you through how to trigger a Smart Campaign in Marketo using
 
 ## Use Case
 
-A lead registers for a webinar through an external platform (e.g., custom app, Pendo, or Eventbrite). You want to automatically:
+A Person registers for a webinar through an external platform (e.g., custom app, Pendo, or Eventbrite). You want to automatically:
 
 - Trigger a reminder email from Marketo
 - Personalize it with:
-  - The lead’s first name
+  - The Person’s first name
   - Webinar title
   - A unique join link
 
@@ -32,7 +32,7 @@ This can be done using the REST API and My Tokens.
 
 ## Step 2: Define the Email Content
 
-Create or edit an <a href="https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/rest/assets/emails" target="_blank">email asset</a> that references both lead and <a href="https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/programs/tokens/managing-my-tokens" target="_blank">My Tokens</a>.
+Create or edit an <a href="https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/rest/assets/emails" target="_blank">email asset</a> that references both Person and <a href="https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/programs/tokens/managing-my-tokens" target="_blank">My Tokens</a>.
 
 Make sure to **insert the tokens directly into the email content**, as shown below:
 
@@ -69,7 +69,7 @@ To pass values dynamically via API, the tokens must already exist in Marketo. Yo
 
 ## Step 4: Set Campaign Qualification Rules and Activate Campaign
 
-Configure the <a href="https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/smart-campaigns/using-smart-campaigns/edit-qualification-rules-in-a-smart-campaign" target="_blank">**qualification rules**</a> to control how often a lead can run through the Smart Campaign.
+Configure the <a href="https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/smart-campaigns/using-smart-campaigns/edit-qualification-rules-in-a-smart-campaign" target="_blank">**qualification rules**</a> to control how often a Person can run through the Smart Campaign.
 
 
 Once configured, click **Activate** in the Smart Campaign to activate the Smart Campaign and able to receive API requests.
@@ -132,7 +132,7 @@ POST /rest/v1/campaigns/1234/trigger.json
 
 ```
 
-Replace `1002200` with the correct Lead ID from your Marketo instance.
+Replace `1002200` with the correct Person ID from your Marketo instance.
 
 ## Authorization
 
@@ -153,9 +153,9 @@ Authorization: Bearer YOUR_ACCESS_TOKEN
 ## Best Practices
 
 - Add fallback/default values to your tokens for testing and QA
-- Use `{{lead.token}}` for lead fields, and `{{my.token}}` for campaign-scoped dynamic values
-- Marketo supports up to 100 leads per request
-- Leads must meet the Smart List criteria otherwise, they are silently skipped
+- Use `{{lead.token}}` for Person fields, and `{{my.token}}` for campaign-scoped dynamic values
+- Marketo supports up to 100 Persons per request
+- Persons must meet the Smart List criteria otherwise, they are silently skipped
 
 ## Summary
 
