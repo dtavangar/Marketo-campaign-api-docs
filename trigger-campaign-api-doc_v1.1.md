@@ -37,7 +37,7 @@ Create or edit an <a href="https://experienceleague.adobe.com/en/docs/marketo-de
 Make sure to **insert the tokens directly into the email content**, as shown below:
 
 ```html
-Hi {{lead.First Name}},
+Hi {{lead.First Name:default=Customer}}
 
 You're registered for **{{my.WebinarTitle}}**.
 
@@ -72,7 +72,7 @@ To pass values dynamically via API, the tokens must already exist in Marketo. Yo
 Configure the <a href="https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/smart-campaigns/using-smart-campaigns/edit-qualification-rules-in-a-smart-campaign" target="_blank">**qualification rules**</a> to control how often a Person can run through the Smart Campaign.
 
 
-Once configured, click **Activate** in the Smart Campaign to activate the Smart Campaign and able to receive API requests.
+Once configured, click **Activate** to enable the Smart Campaign to receive API-triggered requests.
 
 ![Smart Campaign qualification rule](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/smart-campaigns/using-smart-campaigns/media_1391fa7996ec631e24efbaa374bd5a65863eb6d4f.png?width=600&format=png&optimize=medium)
 
@@ -124,7 +124,7 @@ POST /rest/v1/campaigns/1234/trigger.json
       },
       {
         "name": "{{my.WebinarImage}}",
-        "value": "https://business.adobe.com/resources/webinars/media_1a14f6663a5009be5b287ceca050e6f2846d10a17.png"
+        "value": "https://experienceleague.adobe.com/en/docs/marketo-learn/tutorials/events/media_1c6f338a518ada11550084c8ab3a6bbf554ff6eac.jpeg"
       }
     ]
   }
