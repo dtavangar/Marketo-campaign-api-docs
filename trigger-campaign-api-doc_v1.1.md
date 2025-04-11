@@ -8,7 +8,7 @@ This tutorial walks you through how to trigger a Smart Campaign in Marketo using
 
 ## Use Case
 
-A Person registers for a webinar through an external platform (e.g., custom app, Pendo, or Eventbrite). You want to automatically:
+A person registers for a webinar through an external platform (e.g., custom app, Pendo, or Eventbrite). You want to automatically:
 
 - Trigger a reminder email from Marketo
 - Personalize it with:
