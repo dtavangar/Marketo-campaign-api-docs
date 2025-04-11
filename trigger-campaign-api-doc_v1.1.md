@@ -132,7 +132,7 @@ POST /rest/v1/campaigns/1234/trigger.json
 
 ```
 
-Replace `1002200` with the correct Person ID from your Marketo instance.
+Replace `1002200` with the correct person ID from your Marketo instance.
 
 ## Authorization
 
@@ -153,8 +153,8 @@ Authorization: Bearer YOUR_ACCESS_TOKEN
 ## Best Practices
 
 - Add fallback/default values to your tokens for testing and QA
-- Use `{{lead.token}}` for Person fields, and `{{my.token}}` for campaign-scoped dynamic values
-- Marketo supports up to 100 Persons per request
+- Use `{{lead.token}}` for person fields, and `{{my.token}}` for campaign-scoped dynamic values
+- Marketo supports up to 100 people per request
 - Persons must meet the Smart List criteria otherwise, they are silently skipped
 
 ## Summary
