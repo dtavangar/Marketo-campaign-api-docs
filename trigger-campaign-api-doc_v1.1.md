@@ -24,16 +24,15 @@ This can be done using the REST API and My Tokens.
 <a href="https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/programs/creating-programs/understanding-programs" target="_blank">**Programs**</a> folder, create a new 
 <a href="https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/smart-campaigns/understanding-smart-campaigns" target="_blank">**Smart Campaign**</a> called `Send Webinar Reminder`.
 
-2. In the **Smart List** tab, 
-<a href="https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/smart-campaigns/creating-a-smart-campaign/define-smart-list-for-smart-campaign-trigger" target="_blank">add the trigger</a> that will be used to call the campaign via the API.
-   - `Campaign is Requested`
-   - Set **Source** to: `Web Service API`
+2. In the **Smart List** tab, <a href="https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/smart-campaigns/creating-a-smart-campaign/define-smart-list-for-smart-campaign-trigger" target="_blank">add a trigger</a> to allow the campaign to be called via the API:
+   - Select **Campaign is Requested** as the trigger
+   - Set the **Source** to `Web Service API`
 
 ![Smart List trigger setup](/help/assets/trigger-campaign/01CampaignIsRequested.png)
 
 ## Step 2: Define the Email Content
 
-Create or edit an <a href="https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/rest/assets/emails" target="_blank">email asset</a> that references both lead and My Tokens.
+Create or edit an <a href="https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/rest/assets/emails" target="_blank">email asset</a> that references both lead and <a href="https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/programs/tokens/managing-my-tokens" target="_blank">My Tokens</a>.
 
 Make sure to **insert the tokens directly into the email content**, as shown below:
 
@@ -70,7 +69,8 @@ To pass values dynamically via API, the tokens must already exist in Marketo. Yo
 
 ## Step 4: Set Campaign Qualification Rules and Activate Campaign
 
-Configure the **qualification rules** to control how often a lead can run through the Smart Campaign.
+Configure the <a href="https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/smart-campaigns/using-smart-campaigns/edit-qualification-rules-in-a-smart-campaign" target="_blank">**qualification rules**</a> to control how often a lead can run through the Smart Campaign.
+
 
 Once configured, click **Activate** in the Smart Campaign to activate the Smart Campaign and able to receive API requests.
 
@@ -107,27 +107,29 @@ POST /rest/v1/campaigns/1234/trigger.json
 
 ```json
 {
-  "input": [
-    {
-      "id": 1002200,
-      "type": "Lead"
-    }
-  ],
-  "tokens": [
-    {
-      "name": "{{my.WebinarTitle}}",
-      "value": "Scaling Customer Engagement in 2025"
-    },
-    {
-      "name": "{{my.JoinLink}}",
-      "value": "https://webinars.company.com/join/abc123"
-    },
-    {
-      "name": "{{my.WebinarImage}}",
-      "value": "https://company.com/images/webinar-banner.png"
-    }
-  ]
+  "input": {
+    "leads": [
+      {
+        "id": 1002200
+      }
+    ],
+    "tokens": [
+      {
+        "name": "{{my.WebinarTitle}}",
+        "value": "Scaling Customer Engagement in 2025"
+      },
+      {
+        "name": "{{my.JoinLink}}",
+        "value": "https://webinars.company.com/join/abc123"
+      },
+      {
+        "name": "{{my.WebinarImage}}",
+        "value": "https://business.adobe.com/resources/webinars/media_1a14f6663a5009be5b287ceca050e6f2846d10a17.png"
+      }
+    ]
+  }
 }
+
 ```
 
 Replace `1002200` with the correct Lead ID from your Marketo instance.
