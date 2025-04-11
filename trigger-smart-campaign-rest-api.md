@@ -52,7 +52,7 @@ Join here: {{my.JoinLink}}
 >
 > **Important:** Marketo will not render the image unless the token is placed inside a valid image tag. 
 
-![Email editor showing token usage](/help/assets/trigger-campaign/02AddtokensToEMail.png
+![Email editor showing token usage](/help/assets/trigger-campaign/02AddtokensToEMail.png)
 
 
 ## Step 3: Add Tokens to the Program
