@@ -154,8 +154,8 @@ Authorization: Bearer YOUR_ACCESS_TOKEN
 
 - Add fallback/default values to your tokens for testing and QA
 - Use `{{lead.token}}` for lead fields, and `{{my.token}}` for campaign-scoped dynamic values
-- Marketo supports up to **100 leads per request**
-- Leads must meet the Smart List criteria — otherwise, they are silently skipped
+- Marketo supports up to 100 leads per request
+- Leads must meet the Smart List criteria otherwise, they are silently skipped
 
 ## Summary
 
